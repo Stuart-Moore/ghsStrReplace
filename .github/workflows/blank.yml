@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Run a one-line script
-      run: sed -i 's/ntu-test/ntu-prod/g' key.txt
+      run: sed -i .bak 's/ntu-test/ntu-prod/g' key.txt
     - name: Run a multi-line script
       run: |
         echo Add other actions to build,
