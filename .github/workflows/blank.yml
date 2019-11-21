@@ -14,7 +14,10 @@ jobs:
     - uses: actions/checkout@v1
     - name: Run a one-line script
       run: sed -ibak 's/ntu-test/ntu-prod/g' key.txt
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    - name: commit changes
+      uses: stefanzweifel/git-auto-commit-action@v2.3.0
+      with:
+        commit_message: Apply connection change
+        branch: ${{ github.head_ref }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
