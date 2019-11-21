@@ -1,1 +1,1 @@
-ntu-prod
+ntu-test
